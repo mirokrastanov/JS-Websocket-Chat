@@ -6,7 +6,7 @@ Real time chat room using websockets for communication.
 
 
 ### In progress log:
-1. Created a server using a library called (https://www.npmjs.com/package/ws)[ws]
+1. Created a server using a library called [ws](https://www.npmjs.com/package/ws)
 2. Made a script to run the server
 3. Created a client using vanilla JS and a few basic elements
 - A form to take user's input

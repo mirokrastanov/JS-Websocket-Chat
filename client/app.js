@@ -1,4 +1,4 @@
-import { PORT } from '../server/constants.js';
+import { PORT } from './constants.js';
 const socket = new WebSocket(`ws://localhost:${PORT}`);
 
 function sendMessage(e) {
@@ -6,7 +6,6 @@ function sendMessage(e) {
     const input = document.querySelector('input');
     if (input.value) {
         socket.send(input.value);
-        // console.log('send - ' + input.value);
         input.value = '';
     }
     input.focus();
@@ -18,6 +17,5 @@ document.querySelector('form').addEventListener('submit', sendMessage);
 socket.addEventListener('message', ({ data }) => {
     const li = document.createElement('li');
     li.textContent = data;
-    console.log(li);
     document.querySelector('ul').appendChild(li);
 });

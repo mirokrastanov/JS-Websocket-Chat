@@ -1,14 +1,24 @@
-import { PORT_BE, PORT_FE } from './constants.js';
-import { createServer } from 'http';
+import { PORT } from './public/constants.js';
+import express from 'express';
 import { Server } from 'socket.io';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const httpServer = createServer();
-const io = new Server(httpServer, {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+app.use(express.static(path.join(__dirname, 'public')));
+
+const expressServer = app.listen(PORT, () => console.log(`Listening on port: ${PORT}...`));
+
+const io = new Server(expressServer, {
     cors: {
         // origin: '*',
         origin: process.env.NODE_ENV === 'production'
             ? false
-            : [`http://localhost:${PORT_FE}`, `http://127.0.0.1:${PORT_FE}`],
+            : [`http://localhost:${PORT}`, `http://127.0.0.1:${PORT}`],
+            // List the frond end app's domain above if hosted somewhere else
     }
 });
 
@@ -20,5 +30,3 @@ io.on('connection', socket => {
         io.emit('message', `${socket.id.substring(0, 5)}: ${data}`);
     })
 })
-
-httpServer.listen(PORT_BE, () => console.log(`Listening on port: ${PORT_BE}...`));

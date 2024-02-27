@@ -12,7 +12,10 @@ Real time chat room using websockets for communication.
     - A form to take user's input
     - An unordered list to display messages into as they come through
 4. Made sure messages are also readable on the server - reading from the buffer
-5. ...
+5. Modified the imports to fully use ES6
+6. Upgraded the server from a simple websocket to socket.io to enhance scalability and take advantage of all additional benefits listed here [socket.io](https://www.npmjs.com/package/socket.io)
+7. 
+
 
 ### TODO List: 
 1. Replace client code with a more sophisticated UI - possibly using a frond end framework

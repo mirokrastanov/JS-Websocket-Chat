@@ -1,5 +1,5 @@
 import { PORT } from './constants.js';
-const socket = io(`ws://localhost:${PORT}`);
+const socket = io(`ws://localhost:${PORT}`); // should point to the BACK END domain (wherever its deployed)
 
 const msgInput = document.querySelector('#message');
 const nameInput = document.querySelector('#name');
@@ -60,8 +60,6 @@ socket.on('message', (data) => {
     chatDisplay.scrollTop = chatDisplay.scrollHeight;
 });
 
-
-
 let activityTimer;
 socket.on('activity', (name) => {
     activity.textContent = `${name} is typing...`;
@@ -72,3 +70,37 @@ socket.on('activity', (name) => {
         activity.textContent = '';
     }, 1000);
 });
+
+socket.on('userList', ({ users }) => {
+    showUsers(users);
+});
+
+socket.on('roomList', ({ rooms }) => {
+    showRooms(rooms);
+});
+
+function showUsers(users) {
+    usersList.textContent = '';
+    if (users) {
+        usersList.innerHTML = `<em>Users in ${chatRoom.value}:</em>`;
+        users.forEach((user, i) => {
+            usersList.textContent += ` ${user.name}`;
+            if (users.length > 1 && i !== users.length - 1) {
+                usersList.textContent += ',';
+            }
+        });
+    }
+}
+
+function showRooms(rooms) {
+    roomsList.textContent = '';
+    if (rooms) {
+        roomsList.innerHTML = `<em>Active Rooms:</em>`;
+        rooms.forEach((room, i) => {
+            roomsList.textContent += ` ${room}`;
+            if (rooms.length > 1 && i !== rooms.length - 1) {
+                roomsList.textContent += ',';
+            }
+        });
+    }
+}

@@ -1,11 +1,11 @@
 # JS-Websocket-Chat
-Real time chat room using websockets for communication.
+Basic vanilla JS real-time chat app using websockets. Supports users, chat rooms, active rooms and joined users tracking. Everything updates and is diaplyed in real time.
 
-## Readme in progress...
-- Until the project is completed you can observe the current progress log below.
+## Deployment
+- Soon...
 
 
-### In progress log:
+## Progress log:
 1. Created a server using a library called [ws](https://www.npmjs.com/package/ws)
 2. Made a script to run the server
 3. Created a client using vanilla JS and a few basic elements
@@ -18,10 +18,7 @@ Real time chat room using websockets for communication.
 8. Add connect & disconnect events with announcement messages
 9. Add activity detection - eg. show when someone is typing something to the other users
 10. Upgrade activity display with proper clearing when the user has stopped typing or has sent a message
-11. 
-
-
-### TODO List: 
-1. Replace client code with a more sophisticated UI - possibly using a frond end framework
-2. Level up the server so that it can support real time updates, multiple clients, multiple chat rooms, etc.
-3. Deploy 
+11. Display Users and Rooms in real time for all connected users
+12. Display personalized event messages depending on the user and room
+13. Final visual tweeks.
+14. Basic design finished.

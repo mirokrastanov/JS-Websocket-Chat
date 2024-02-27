@@ -6,7 +6,9 @@ const httpServer = createServer();
 const io = new Server(httpServer, {
     cors: {
         // origin: '*',
-        origin: process.env.NODE_ENV === 'production' ? false : [`http://localhost:${PORT_FE}`],
+        origin: process.env.NODE_ENV === 'production'
+            ? false
+            : [`http://localhost:${PORT_FE}`, `http://127.0.0.1:${PORT_FE}`],
     }
 });
 

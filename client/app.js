@@ -1,5 +1,5 @@
-import { PORT } from './constants.js';
-const socket = new WebSocket(`ws://localhost:${PORT}`);
+import { PORT_BE } from '../server/constants.js';
+const socket = new WebSocket(`ws://localhost:${PORT_BE}`);
 
 function sendMessage(e) {
     e.preventDefault();

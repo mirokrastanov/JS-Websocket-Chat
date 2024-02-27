@@ -21,11 +21,25 @@ function sendMessage(e) {
     msgInput.focus();
 }
 
-document.querySelector('form').addEventListener('submit', sendMessage);
+function enterRoom(e) {
+    e.preventDefault();
+    if (nameInput.value && chatRoom.value) {
+        socket.emit('enterRoom', {
+            name: nameInput.value,
+            room: chatRoom.value,
+        });
+    }
+}
+
+document.querySelector('.form-msg').addEventListener('submit', sendMessage);
+document.querySelector('.form-join').addEventListener('submit', enterRoom);
+msgInput.addEventListener('keypress', () => {
+    socket.emit('activity', nameInput.value);
+});
 
 // Listen for messages
 socket.on('message', (data) => {
-    
+
     // clear list during development
     if (data == 'Welcome to Chat App!') {
         document.querySelector('ul').replaceChildren();
@@ -37,9 +51,7 @@ socket.on('message', (data) => {
     document.querySelector('ul').appendChild(li);
 });
 
-msgInput.addEventListener('keypress', () => {
-    socket.emit('activity', socket.id.substring(0, 5));
-});
+
 
 let activityTimer;
 socket.on('activity', (name) => {

@@ -54,7 +54,7 @@ socket.on('message', (data) => {
         </div>
         <div class="post__text">${text}</div>`;
     } else {
-        li.innerHTML = `<div clas="post__text">${text}</div>`;
+        li.innerHTML = `<div class="post__text">${text}</div>`;
     }
     chatDisplay.appendChild(li);
     chatDisplay.scrollTop = chatDisplay.scrollHeight;

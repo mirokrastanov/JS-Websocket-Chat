@@ -39,16 +39,25 @@ msgInput.addEventListener('keypress', () => {
 
 // Listen for messages
 socket.on('message', (data) => {
-
-    // clear list during development
-    if (data == 'Welcome to Chat App!') {
-        document.querySelector('ul').replaceChildren();
-    }
-
     activity.textContent = '';
+    const { name, text, time } = data;
+
     const li = document.createElement('li');
-    li.textContent = data;
-    document.querySelector('ul').appendChild(li);
+    li.classList.add('post');
+    if (name === nameInput.value) li.classList.add('post--left');
+    if (name !== nameInput.value && name !== 'Admin') li.classList.add('post--right');
+    if (name !== 'Admin') {
+        li.innerHTML = `
+        <div class="post__header ${name === nameInput.value ? 'post__header--user' : 'post__header--reply'}">
+            <span class="post__header--name">${name}</span>
+            <span class="post__header--time">${time}</span>
+        </div>
+        <div class="post__text">${text}</div>`;
+    } else {
+        li.innerHTML = `<div clas="post__text">${text}</div>`;
+    }
+    chatDisplay.appendChild(li);
+    chatDisplay.scrollTop = chatDisplay.scrollHeight;
 });
 
 

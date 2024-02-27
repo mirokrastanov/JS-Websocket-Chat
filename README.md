@@ -15,7 +15,10 @@ Real time chat room using websockets for communication.
 5. Modified the imports to fully use ES6
 6. Upgraded the server from a simple websocket to socket.io to enhance scalability and take advantage of all additional benefits listed here [socket.io](https://www.npmjs.com/package/socket.io)
 7. Incorporate Express.js into the server
-8. 
+8. Add connect & disconnect events with announcement messages
+9. Add activity detection - eg. show when someone is typing something to the other users
+10. Upgrade activity display with proper clearing when the user has stopped typing or has sent a message
+11. 
 
 
 ### TODO List: 

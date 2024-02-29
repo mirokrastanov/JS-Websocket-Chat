@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Basic vanilla JS real-time chat app using websockets. Supports users, chat rooms, active rooms and joined users tracking. Everything updates and is diaplyed in real time.",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "server": "node server/server.js",
     "dev-server": "nodemon server/server.js"

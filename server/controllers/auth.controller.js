@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import bcrypt from 'bcryptjs';
 import { genAvatar } from "../utils/avatarUtils.js";
 
 export const signup = async (req, res) => {
@@ -16,11 +17,13 @@ export const signup = async (req, res) => {
         }
 
         // TODO: HASH Password
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
 
         const newUser = new User({
             fullName,
             username,
-            password,
+            password: hashedPassword,
             gender,
             profilePic: genAvatar(fullName),
         });

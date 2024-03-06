@@ -7,6 +7,13 @@ import useConversation from '../../zustand/useConversation';
 const MessageContainer = () => {
     const { selectedConversation, setSelectedConversation } = useConversation();
 
+    useEffect(() => {
+
+        return () => {
+            setSelectedConversation(null); // clear on unmount
+        };
+    }, []);
+
     return (
         <div className='md:min-w-[450px] flex flex-col'>
             {!selectedConversation ? (

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import GenderCheckbox from './GenderCheckbox';
 import { Link } from 'react-router-dom';
+import useSignUp from '../../hooks/useSignUp';
 
 const SignUp = () => {
     const [values, setValues] = useState({
@@ -11,13 +12,16 @@ const SignUp = () => {
         gender: 'male',
     });
 
+    const { loading, signUp } = useSignUp();
+
     const handleCheckbox = (gender) => {
         setValues({ ...values, gender });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(values);
+        await signUp(values);
     };
 
     return (
@@ -53,7 +57,7 @@ const SignUp = () => {
                         <label className='label p-2' htmlFor='password'>
                             <span className='text-base text-white'>Password</span>
                         </label>
-                        <input name='password' type='password' placeholder='Enter Password...'
+                        <input name='password' type='password' placeholder='Minimum 6 characters'
                             className='w-full input input-bordered h-10'
                             value={values.password}
                             onChange={(e) => setValues({ ...values, password: e.target.value })} />

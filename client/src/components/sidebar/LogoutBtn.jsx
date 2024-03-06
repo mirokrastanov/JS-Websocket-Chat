@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { BiLogOut } from "react-icons/bi";
+import useLogout from '../../hooks/useLogout';
 
 const LogoutBtn = () => {
-    const [loading, setLoading] = useState(false); // TODO move to a hook
-    const logout = () => { }; // TODO move to a hook
+    const { loading, logout } = useLogout();
 
     return (
         <div className='mt-auto'>

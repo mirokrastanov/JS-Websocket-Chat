@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Login from './pages/login/Login';
 import SignUp from './pages/signup/SignUp';
@@ -9,6 +9,10 @@ import { useAuthContext } from './context/AuthContext';
 
 function App() {
     const { authUser } = useAuthContext();
+
+    // useEffect(() => {
+    //     console.log(authUser);
+    // }, []);
 
     return (
         <>

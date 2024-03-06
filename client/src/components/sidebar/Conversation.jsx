@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import './Conversation.css';
+import useConversation from '../../zustand/useConversation';
 
 const Conversation = ({ conversation, isLast, emoji }) => {
+    const { selectedConversation, setSelectedConversation } = useConversation();
+
+    const isSelected = selectedConversation?._id === conversation._id;
+
+    useEffect(() => {
+        console.log(isSelected);
+    }, [isSelected])
+
+
     return (
         <>
-            <div className='flex gap-2 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer'>
+            <div className={`flex gap-2 items-center hover:bg-sky-500 rounded p-2 py-1 cursor-pointer
+            ${isSelected ? 'bg-sky-500' : ''} conversation-ctr`}
+                onClick={(e) => setSelectedConversation(conversation)}>
                 <div className='avatar online'>
                     <div className='w-12 rounded-full'>
                         <img src={conversation.profilePic} alt='user avatar' />

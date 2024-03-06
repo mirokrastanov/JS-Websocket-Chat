@@ -4,13 +4,7 @@ import useConversation from '../../zustand/useConversation';
 
 const Conversation = ({ conversation, isLast, emoji }) => {
     const { selectedConversation, setSelectedConversation } = useConversation();
-
     const isSelected = selectedConversation?._id === conversation._id;
-
-    useEffect(() => {
-        console.log(isSelected);
-    }, [isSelected])
-
 
     return (
         <>

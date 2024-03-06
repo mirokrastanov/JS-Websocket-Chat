@@ -15,13 +15,14 @@ const Conversations = () => {
             {loading
                 ? <span className='loading loading-spinner mx-auto'></span>
                 : conversations.length > 0
-                    ? <> {conversations.map((conversation, i) => (
+                    ? <> {conversations.map((conversation, i) =>
                         <Conversation
                             key={conversation._id}
                             conversation={conversation}
                             emoji={getRandomEmoji()}
                             isLast={i === conversations.length - 1}
-                        />))} </> : null}
+                        />
+                    )} </> : null}
         </div>
     )
 }

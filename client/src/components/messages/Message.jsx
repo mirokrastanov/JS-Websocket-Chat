@@ -1,16 +1,18 @@
 import React from 'react';
+import { useAuthContext } from '../../context/AuthContext';
+import useConversation from '../../zustand/useConversation';
+import { extractTime } from '../../utils/extractTime';
 
-const Message = () => {
-
-    // TODO - replace static placeholders with actual values
-    let [
-        chatClassName, profilePic, bubbleBgColor,
-        shakeClass, message, formattedTime
-    ] = [
-            'chat-end', 'https://ui-avatars.com/api/?name=john+cena&bold=true&background=random',
-            'bg-blue-500', '', { message: 'Hey, John!' }, '12:03'
-        ];
-
+const Message = ({ message }) => {
+    const { authUser } = useAuthContext();
+    const { selectedConversation } = useConversation();
+    const fromMe = message.senderId === authUser._id;
+    const chatClassName = fromMe ? 'chat-end' : 'chat-start';
+    const profilePic = fromMe ? authUser.profilePic : selectedConversation?.profilePic;
+    const bubbleBgColor = fromMe ? 'bg-sky-500' : 'bg-slate-900';
+    const formattedTime = extractTime(message.createdAt);
+    const shakeClass = '';
+    const youThem = fromMe ? 'You' : selectedConversation?.fullName.split(' ')[0] || 'Them';
 
     return (
         <div className={`chat ${chatClassName}`}>
@@ -20,7 +22,7 @@ const Message = () => {
                 </div>
             </div>
             <div className={`chat-bubble text-white ${bubbleBgColor} ${shakeClass} pb-2`}>{message.message}</div>
-            <div className='chat-footer opacity-50 text-xs flex gap-1 items-center'>{formattedTime}</div>
+            <div className='chat-footer text-white opacity-75 text-xs flex gap-1 items-center'>{youThem}: {formattedTime}</div>
         </div>
     )
 }

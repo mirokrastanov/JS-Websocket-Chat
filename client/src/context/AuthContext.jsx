@@ -7,7 +7,7 @@ export const useAuthContext = () => {
 };
 
 export const AuthContextProvider = ({ children }) => {
-    const [authUser, setAuthUser] = useState(JSON.parse(localStorage.getItem('authUser')) || null);
+    const [authUser, setAuthUser] = useState(JSON.parse(localStorage.getItem('chat-user')) || null);
 
     // TODO
     // move all auth hooks here

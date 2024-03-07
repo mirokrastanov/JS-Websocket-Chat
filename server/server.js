@@ -7,7 +7,7 @@ import messageRoutes from './routes/message.routes.js';
 import userRoutes from './routes/user.routes.js';
 
 import connectToMongoDB from './db/mongoDB.js';
-import { app } from './socket/socket.js';
+import { app, server } from './socket/socket.js';
 
 const PORT = process.env.PORT || 5000;
 
@@ -31,7 +31,7 @@ app.use('/api/users', userRoutes);
 
 
 // Run Server
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     connectToMongoDB();
     console.log(`Server is running on port ${PORT}...`);
 });

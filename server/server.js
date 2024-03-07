@@ -7,8 +7,8 @@ import messageRoutes from './routes/message.routes.js';
 import userRoutes from './routes/user.routes.js';
 
 import connectToMongoDB from './db/mongoDB.js';
+import { app } from './socket/socket.js';
 
-const app = express();
 const PORT = process.env.PORT || 5000;
 
 dotenv.config();

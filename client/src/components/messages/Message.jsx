@@ -11,7 +11,7 @@ const Message = ({ message }) => {
     const profilePic = fromMe ? authUser.profilePic : selectedConversation?.profilePic;
     const bubbleBgColor = fromMe ? 'bg-sky-500' : 'bg-slate-900';
     const formattedTime = extractTime(message.createdAt);
-    const shakeClass = '';
+    const shakeClass = message.shouldShake ? 'shake' : '';
     const youThem = fromMe ? 'You' : selectedConversation?.fullName.split(' ')[0] || 'Them';
 
     return (

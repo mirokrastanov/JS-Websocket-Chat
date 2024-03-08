@@ -36,8 +36,8 @@ const SignUp = () => {
                             <span className='text-base text-white'>Full Name</span>
                         </label>
                         <input
-                            name='fullName' type='text' placeholder='John Doe'
-                            className='w-full input input-bordered  h-10'
+                            id='fullName' name='fullName' type='text' placeholder='John Doe'
+                            className='w-full input input-bordered  h-10' autoComplete='on'
                             value={values.fullName}
                             onChange={(e) => setValues({ ...values, fullName: e.target.value })} />
                     </div>
@@ -46,8 +46,8 @@ const SignUp = () => {
                         <label className='label p-2' htmlFor='username'>
                             <span className='text-base text-white'>Username</span>
                         </label>
-                        <input name='username' type='text' placeholder='johndoe'
-                            className='w-full input input-bordered h-10'
+                        <input id='username' name='username' type='text' placeholder='johndoe'
+                            className='w-full input input-bordered h-10' autoComplete='on'
                             value={values.username}
                             onChange={(e) => setValues({ ...values, username: e.target.value })} />
                     </div>
@@ -56,7 +56,7 @@ const SignUp = () => {
                         <label className='label p-2' htmlFor='password'>
                             <span className='text-base text-white'>Password</span>
                         </label>
-                        <input name='password' type='password' placeholder='Minimum 6 characters'
+                        <input id='password' name='password' type='password' placeholder='Minimum 6 characters'
                             className='w-full input input-bordered h-10'
                             value={values.password}
                             onChange={(e) => setValues({ ...values, password: e.target.value })} />
@@ -67,7 +67,7 @@ const SignUp = () => {
                             <span className='text-base text-white'>Confirm Password</span>
                         </label>
                         <input name='confirmPassword' type='password' placeholder='Confirm Password...'
-                            className='w-full input input-bordered h-10'
+                            id='confirmPassword' className='w-full input input-bordered h-10'
                             value={values.confirmPassword}
                             onChange={(e) => setValues({ ...values, confirmPassword: e.target.value })} />
                     </div>

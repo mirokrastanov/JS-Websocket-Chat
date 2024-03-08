@@ -4,7 +4,6 @@ import { useAuthContext } from '../../context/AuthContext';
 
 const NoChatSelected = () => {
     const { authUser } = useAuthContext();
-    console.log(authUser);
 
     return (
         <div className='flex items-center justify-center w-full h-full'>

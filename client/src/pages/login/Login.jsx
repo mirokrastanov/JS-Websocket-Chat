@@ -24,8 +24,8 @@ const Login = () => {
                         <label className='label p-2' htmlFor='username'>
                             <span className='text-base text-white'>Username</span>
                         </label>
-                        <input name='username' type='text' placeholder='Enter Username...'
-                            className='w-full input input-bordered h-10'
+                        <input id='username' name='username' type='text' placeholder='Enter Username...'
+                            className='w-full input input-bordered h-10' autoComplete='on'
                             value={username}
                             onChange={(e) => setUsername(e.target.value)} />
                     </div>
@@ -34,7 +34,7 @@ const Login = () => {
                         <label className='label p-2' htmlFor='password'>
                             <span className='text-base text-white'>Password</span>
                         </label>
-                        <input name='password' type='password' placeholder='Enter Password...'
+                        <input id='password' name='password' type='password' placeholder='Enter Password...'
                             className='w-full input input-bordered h-10'
                             value={password}
                             onChange={(e) => setPassword(e.target.value)} />

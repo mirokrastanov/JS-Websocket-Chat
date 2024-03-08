@@ -17,14 +17,14 @@ const MessageInput = () => {
 
         const res = await sendMessage(messageInput);
         if (res === 'success') setMessageInput('');
-        
+
     };
 
     return (
         <form className='px-4 my-3' onSubmit={handleSubmit}>
             <div className='w-full relative'>
                 <input
-                    type='text' placeholder='Send a messageInput...'
+                    id='msgInput' name='msgInput' type='text' placeholder='Send a messageInput...'
                     className='border text-sm rounded-lg block w-full p-2.5  bg-gray-700 border-gray-600 text-white'
                     value={messageInput} onChange={(e) => setMessageInput(e.target.value)} />
                 <button type='submit' className='absolute inset-y-0 end-0 flex items-center pe-3'>

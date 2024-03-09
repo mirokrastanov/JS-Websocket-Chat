@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { IoSearchSharp } from "react-icons/io5";
 import useConversation from '../../zustand/useConversation';
 import useGetConversations from '../../hooks/useGetConversations';

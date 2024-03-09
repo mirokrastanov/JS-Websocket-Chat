@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import './Conversation.css';
 import useConversation from '../../zustand/useConversation';
 import { useSocketContext } from '../../context/SocketContext';

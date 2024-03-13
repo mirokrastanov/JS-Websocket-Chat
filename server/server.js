@@ -1,3 +1,4 @@
+import path from 'path';
 import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
@@ -10,6 +11,8 @@ import connectToMongoDB from './db/mongoDB.js';
 import { app, server } from './socket/socket.js';
 
 const PORT = process.env.PORT || 5000;
+
+const __dirname = path.resolve();
 
 dotenv.config();
 
@@ -29,6 +32,14 @@ app.use('/api/users', userRoutes);
 
 // TODO: Error handler
 
+// pre-deploy middleware
+app.use(express.static(path.join(__dirname, '/client/dist')));
+
+// wild-card routes (pre-deploy)
+// serve client index for non-server routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
 // Run Server
 server.listen(PORT, () => {

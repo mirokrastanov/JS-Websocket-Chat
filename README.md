@@ -2,7 +2,7 @@
 Basic vanilla JS real-time chat app using websockets. Supports users, chat rooms, active rooms and joined users tracking. Everything updates and is diaplyed in real time.
 
 ## Deployment
-- Soon...
+- [DEMO](https://js-websocket-chat.onrender.com/)
 
 
 ## Progress log:

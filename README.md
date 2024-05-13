@@ -1,3 +1,6 @@
+### Docs will be updated very soon. Until then do try out the demo and check out the progress log. Thank You.
+- --------------
+
 # JS-Websocket-Chat
 Basic vanilla JS real-time chat app using websockets. Supports users, chat rooms, active rooms and joined users tracking. Everything updates and is diaplyed in real time.
 

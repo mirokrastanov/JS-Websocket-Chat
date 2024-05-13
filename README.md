@@ -5,6 +5,7 @@
 Basic vanilla JS real-time chat app using websockets. Supports users, chat rooms, active rooms and joined users tracking. Everything updates and is diaplyed in real time.
 
 ## Deployment
+- The first time you connect can take up to 1 minute due to the free restrictions on render. Further loading during the same session will be instant just like for any other website. :)
 - [DEMO](https://js-websocket-chat.onrender.com/)
 
 

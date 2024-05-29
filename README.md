@@ -1,28 +1,43 @@
-### Docs will be updated very soon. Until then do try out the demo and check out the progress log. Thank You.
-- --------------
-
 # JS-Websocket-Chat
-Basic vanilla JS real-time chat app using websockets. Supports users, chat rooms, active rooms and joined users tracking. Everything updates and is diaplyed in real time.
+💬📱💻Socket.io-powered chat app enabling real-time messaging across multiple chat rooms, with live event updates and user presence.
+<p align="center"><a href="https://js-websocket-chat.onrender.com/"><img src="https://raw.githubusercontent.com/mirokrastanov/Software-Engineering-SoftUni/main/miscellaneous/js-websocket-chat/2.png" alt="game-image" height="500px"></a></p>
 
-## Deployment
+## Live Demo
+[<img src="https://github.com/mirokrastanov/Software-Engineering-SoftUni/raw/main/miscellaneous/try-now-btn.png?raw=true" alt="run-button" height="40px" />](https://js-websocket-chat.onrender.com/)
 - The first time you connect can take up to 1 minute due to the free restrictions on render. Further loading during the same session will be instant just like for any other website. :)
-- [DEMO](https://js-websocket-chat.onrender.com/)
+### The Demo is also available in my app library 
+- Check out the [App Library](https://app-library-13e36.web.app/)
 
+## Features
+- Peer to peer chat
+- Multiple chat rooms
+- Real time events
+- Instant messaging
+- Activity detection (typing indicator and more)
+- Online Status
+- Search and auto-activate the chat with the searched user
+- Welcome screen
+- Authentication
+- Beautiful design
 
-## Progress log:
-1. Created a server using a library called [ws](https://www.npmjs.com/package/ws)
-2. Made a script to run the server
-3. Created a client using vanilla JS and a few basic elements
-    - A form to take user's input
-    - An unordered list to display messages into as they come through
-4. Made sure messages are also readable on the server - reading from the buffer
-5. Modified the imports to fully use ES6
-6. Upgraded the server from a simple websocket to socket.io to enhance scalability and take advantage of all additional benefits listed here [socket.io](https://www.npmjs.com/package/socket.io)
-7. Incorporate Express.js into the server
-8. Add connect & disconnect events with announcement messages
-9. Add activity detection - eg. show when someone is typing something to the other users
-10. Upgrade activity display with proper clearing when the user has stopped typing or has sent a message
-11. Display Users and Rooms in real time for all connected users
-12. Display personalized event messages depending on the user and room
-13. Final visual tweeks.
-14. Basic design finished.
+## Tech Used
+1. Node.js
+2. Express.js
+3. Modular design
+4. ES6 Imports
+5. [WS](https://www.npmjs.com/package/ws) - websockets to handle the events.
+6. [Socket.io](https://www.npmjs.com/package/socket.io) - real time updates available to everyone simultaneously.
+
+## App Screenshots
+<p align="center"><img src="https://github.com/mirokrastanov/Software-Engineering-SoftUni/blob/main/miscellaneous/js-websocket-chat/0.png" alt="board-image" title="image" /></p>
+<p align="center"><img src="https://github.com/mirokrastanov/Software-Engineering-SoftUni/blob/main/miscellaneous/js-websocket-chat/1.png" alt="board-image" title="image" /></p>
+<p align="center"><img src="https://github.com/mirokrastanov/Software-Engineering-SoftUni/blob/main/miscellaneous/js-websocket-chat/2.png" alt="board-image" title="image" /></p>
+<p align="center"><img src="https://github.com/mirokrastanov/Software-Engineering-SoftUni/blob/main/miscellaneous/js-websocket-chat/3.png" alt="board-image" title="image" /></p>
+
+## Live Demo
+[<img src="https://github.com/mirokrastanov/Software-Engineering-SoftUni/raw/main/miscellaneous/try-now-btn.png?raw=true" alt="run-button" height="40px" />](https://js-websocket-chat.onrender.com/)
+- The first time you connect can take up to 1 minute due to the free restrictions on render. Further loading during the same session will be instant just like for any other website. :)
+
+## Source Code
+- [View Source Code](https://github.com/mirokrastanov/JS-Websocket-Chat)
+  
